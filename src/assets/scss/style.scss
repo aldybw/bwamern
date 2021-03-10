@@ -14,6 +14,7 @@
 @import "type";
 @import "images";
 @import "code";
+@import "colorVariables";
 @import "container-grid";
 @import "grid";
 @import "tables";
@@ -199,4 +200,10 @@ section {
       }
     }
   }
+}
+
+.testimonial-hero,
+.testimonial-hero img {
+  width: 365px;
+  height: 500px;
 }
