@@ -6,6 +6,7 @@
  */
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+@import "colorVariables";
 @import "functions";
 @import "variables";
 @import "mixins";
@@ -14,7 +15,6 @@
 @import "type";
 @import "images";
 @import "code";
-@import "colorVariables";
 @import "container-grid";
 @import "grid";
 @import "tables";
@@ -106,7 +106,10 @@ section {
 }
 
 .card {
-  height: 100%;
+  &.bordered {
+    border: 1px solid $gray-200;
+  }
+  border-radius: 15px;
 
   .tag {
     z-index: 3;
@@ -236,5 +239,12 @@ footer {
     margin: 50px 0;
     font-weight: 300;
     color: $gray-500;
+  }
+}
+
+main {
+  p {
+    color: $gray-500;
+    font-weight: 300;
   }
 }
