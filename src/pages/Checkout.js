@@ -45,7 +45,7 @@ class Checkout extends Component {
 
   render() {
     const { data } = this.state;
-    const { checkout } = this.props;
+    const { checkout, page } = this.props;
 
     if (!checkout)
       return (
@@ -198,6 +198,7 @@ class Checkout extends Component {
 
 const mapStateToProps = (state) => ({
   checkout: state.checkout,
+  page: state.page,
 });
 
 export default connect(mapStateToProps)(Checkout);
