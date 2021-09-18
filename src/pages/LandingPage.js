@@ -22,15 +22,13 @@ class LandingPage extends Component {
 
     if (!this.props.page.landingPage)
       this.props.fetchPage(
-        `https://admin-staycation-20.herokuapp.com/api/v1/member/landing-page`,
+        `${process.env.REACT_APP_HOST}/api/v1/member/landing-page`,
         "landingPage"
       );
   }
 
   render() {
     const { page } = this.props;
-
-    console.log(page);
 
     if (!page.hasOwnProperty("landingPage")) return null;
 
