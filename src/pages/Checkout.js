@@ -15,8 +15,6 @@ import BookingInformation from "parts/Checkout/BookingInformation";
 import Payment from "parts/Checkout/Payment";
 import Completed from "parts/Checkout/Completed";
 
-import ItemDetails from "json/itemDetails.json";
-
 class Checkout extends Component {
   state = {
     data: {
@@ -56,7 +54,12 @@ class Checkout extends Component {
           <div className="col-3">
             Pilih kamar dulu
             <div>
-              <Button className="btn mt-5" type="link" href="/" isLight>
+              <Button
+                className="btn mt-5"
+                type="button"
+                onClick={() => this.props.history.goBack()}
+                isLight
+              >
                 Back
               </Button>
             </div>
@@ -72,7 +75,7 @@ class Checkout extends Component {
           <BookingInformation
             data={data}
             checkout={checkout}
-            ItemDetails={ItemDetails}
+            ItemDetails={page[checkout._id]}
             onChange={this.onChange}
           />
         ),
@@ -84,7 +87,7 @@ class Checkout extends Component {
           <Payment
             data={data}
             checkout={checkout}
-            ItemDetails={ItemDetails}
+            ItemDetails={page[checkout._id]}
             onChange={this.onChange}
           />
         ),
@@ -137,7 +140,7 @@ class Checkout extends Component {
                     type="link"
                     isBlock
                     isLight
-                    href={`/properties/${ItemDetails._id}`}
+                    href={`/properties/${checkout._id}`}
                   >
                     Cancel
                   </Button>
